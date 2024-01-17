@@ -26,11 +26,12 @@ function App() {
   
   return (
     <>
-     <h1>chai aur code</h1>
+     <h1>chai aur code</h1> 
      <h2>counter value : {counter}</h2>
 
-     <button onClick = {addValue}>Add value</button>
-     <button onClick={removeValue}>Remove value</button>
+     <button onClick = {addValue}>Add value {counter}</button> <t/> <t/>
+     <button onClick={removeValue}>Remove value {counter}</button>
+     <footer>counter : {counter}</footer>
     </>
   )
 }
