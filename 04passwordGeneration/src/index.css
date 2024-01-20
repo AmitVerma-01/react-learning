@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#btn:onClick{
+  background-color: rgba(84, 84, 188, 0.203);
+  font-size: large;
+}
