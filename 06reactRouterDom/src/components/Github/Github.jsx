@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 export default function Github(){
-    const [data, setData] = useState([])
-    useEffect(()=>{
-        fetch('https://api.github.com/users/amitverma-01')
-        .then((res)=>res.json())
-        .then((data)=>{
-            setData(data)
-            console.log(data);
-        })
-    },[setData])
+
+    const data = useLoaderData();
+     
+    // const [data, setData] = useState([])
+    // useEffect(()=>{
+    //     fetch('https://api.github.com/users/amitverma-01')
+    //     .then((res)=>res.json())
+    //     .then((data)=>{
+    //         setData(data)
+    //         console.log(data);
+    //     })
+    // },[])
     return(
-       <div className="flex items-center justify-around bg-gray-400 p-20">
+       <div className="flex items-center mx-24 justify-around bg-gray-400 p-20">
             <div>
-                <img className="rounded-full h-60" src={data.avatar_url} alt="" />
+                <img className="rounded-full" width={300} src={data.avatar_url} alt="" />
             </div>
-            <div className="info mr-10 bg-slate-300 text-lg font-semibold bg-opacity-60 h-72 w-72 p-3 rounded-md shadow-md">
+            <div className="info bg-slate-300 text-lg font-semibold bg-opacity-60  p-7 rounded-md shadow-md">
                 <h1>Name : {data.name}</h1>
                 <h1>UserName : {data.login}</h1>
                 <h1>Followers : {data.followers}</h1>
@@ -26,4 +30,9 @@ export default function Github(){
             </div>
        </div>
     )
+}
+
+export const githubLoader = async () => {
+    const response = await fetch('https://api.github.com/users/amitverma-01');
+    return response.json();
 }
