@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { TodoProvider } from "./contexs";
 import { TodoForm } from "./components";
 import TodoItem from "./components/TodoItem";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -56,6 +57,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Footer />
       </TodoProvider>
   );
 }
