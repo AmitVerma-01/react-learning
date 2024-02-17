@@ -8,7 +8,7 @@ function App() {
 
   return (
     <UserContextProvider>
-      <h1>chai aur code share is important how te you you are so cute  </h1>
+      <h1>chai aur code share is important. You are so cute  </h1>
       <LogIn />
       
       <Profile />
